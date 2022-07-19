@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -17,17 +17,34 @@ jobs:
 
   publish-gpr:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     permissions:
       packages: write
       contents: read
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: setup:checkout
+        uses: actions/checkout@master
+      - name: setup:python3.7
+        uses: actions/setup-python@v1
         with:
-          node-version: 12
-          registry-url: https://npm.pkg.github.com/
-      - run: cd dist
+          python-version: '3.7'
+          architecture: x64
+      - name: setup:cache
+        uses: actions/cache@v1.1.0
+        with:
+          path: ${{ github.workspace }}/node_modules
+          key: ${{ runner.os }}-api-build-node-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-api-build-node-
+            ${{ runner.os }}-api-
+      - name: deps:install
+        shell: bash
+        run: |
+          yarn
+      - name: build:prod
+        shell: bash
+        run: |
+          yarn compile:prod
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.PA_TOKEN}}
