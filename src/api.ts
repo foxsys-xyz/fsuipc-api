@@ -26,6 +26,7 @@ export class FsuipcApi {
       }
       return true;
     } catch (error) {
+      // @ts-ignore
       throw new FSUIPCError(error.message, error.code);
     }
   }

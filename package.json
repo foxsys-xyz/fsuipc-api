@@ -14,7 +14,7 @@
   "main": "./api.js",
   "types": "./lib/index.d.ts",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "@foxsys-xyz:registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "start": "nodemon --exec cross-env TS_NODE_FILES=true TS_NODE_TYPE_CHECK=true TS_NODE_PROJECT=src/tsconfig.app.json node --inspect -r tsconfig-paths/register -r ts-node/register ./src/api.ts",
