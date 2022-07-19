@@ -5,18 +5,7 @@ on:
     types: [created]
 
 jobs:
-  build:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 12
-      - run: yarn install
-      - run: yarn compile:prod
-
   publish-gpr:
-    needs: build
     runs-on: windows-latest
     permissions:
       packages: write
