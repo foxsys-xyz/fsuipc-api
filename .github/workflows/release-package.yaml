@@ -18,14 +18,6 @@ jobs:
         with:
           python-version: '3.7'
           architecture: x64
-      - name: setup:cache
-        uses: actions/cache@v1.1.0
-        with:
-          path: ${{ github.workspace }}/node_modules
-          key: ${{ runner.os }}-api-build-node-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-api-build-node-
-            ${{ runner.os }}-api-
       - name: deps:install
         shell: bash
         run: |
@@ -34,6 +26,9 @@ jobs:
         shell: bash
         run: |
           yarn compile:prod
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.PA_TOKEN}}
+      - name: publish package
+        shell: bash
+        run: |
+          cd dist
+        run: |
+          npm publish —access public
