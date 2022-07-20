@@ -29,6 +29,4 @@ jobs:
       - name: publish package
         shell: bash
         run: |
-          cd dist
-        run: |
-          npm publish —access public
+          cd dist && npm publish —access public
