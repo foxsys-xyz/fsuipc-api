@@ -1,6 +1,6 @@
 {
   "name": "@foxsys-xyz/fsuipc-api",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": {
     "name": "FSUIPC [Node Open Source Team], foxsys-xyz",
     "url": "https://github.com/foxsys-xyz"
@@ -10,7 +10,7 @@
   "main": "./api.js",
   "types": "./lib/index.d.ts",
   "files": [
-    "dist"
+    "/dist/**/*"
   ],
   "scripts": {
     "start": "nodemon --exec cross-env TS_NODE_FILES=true TS_NODE_TYPE_CHECK=true TS_NODE_PROJECT=src/tsconfig.app.json node --inspect -r tsconfig-paths/register -r ts-node/register ./src/api.ts",
