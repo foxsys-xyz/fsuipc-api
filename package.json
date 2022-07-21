@@ -1,6 +1,6 @@
 {
   "name": "@foxsys-xyz/fsuipc-api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "FSUIPC [Node Open Source Team], foxsys-xyz",
     "url": "https://github.com/foxsys-xyz"
@@ -27,11 +27,6 @@
     "fsuipc": "0.4.1",
     "rxjs": "7.5.6",
     "vm2": "3.9.10"
-  },
-  "peerDependencies": {
-    "fsuipc": "^0.3.0",
-    "rxjs": "^6.5.0",
-    "vm2": "^3.8.0"
   },
   "devDependencies": {
     "@exalif/tscpaths": "0.1.3",
