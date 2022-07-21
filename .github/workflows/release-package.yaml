@@ -13,6 +13,11 @@ jobs:
     steps:
       - name: setup:checkout
         uses: actions/checkout@master
+      - name: setup:node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
       - name: setup:python3.7
         uses: actions/setup-python@v1
         with:
@@ -27,6 +32,6 @@ jobs:
         run: |
           yarn compile:prod && cd dist
       - name: publish:package
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
