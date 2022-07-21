@@ -5,7 +5,7 @@
     "name": "FSUIPC [Node Open Source Team], foxsys-xyz",
     "url": "https://github.com/foxsys-xyz"
   },
-  "homepage": "https://github.com/foxsys-xyz",
+  "homepage": "https://github.com/foxsys-xyz/fsuipc-api",
   "license": "MIT",
   "main": "./api.js",
   "types": "./lib/index.d.ts",

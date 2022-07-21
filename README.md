@@ -1,19 +1,18 @@
 <br/>
 
-<img align="left" src="./public/img/Logo [Dark Background].svg" width="64" />
+<img align="left" src="./public/logoLight.svg" width="64" />
 
 <br/><br/><br/>
 
-## foxsys-xyz \\ x-crew
-The main foxsys-xyz application. Still a work in progress.
+## foxsys-xyz \\ fsuipc-api
+an fsuipc api to track simulator events via x-track which works on node. based on @fsuipc/api 🔗
 
 ## installation
 ```sh
-$ yarn add @fsuipc/api
+$ yarn add @foxsys-xyz/fsuipc-api
 ```
 
 ## complete example
-
 ```typescript
 import { FsuipcApi } from '@fsuipc/api';
 
