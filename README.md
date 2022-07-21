@@ -1,6 +1,6 @@
 <br/>
 
-<img align="left" src="./public/logoLight.svg" width="64" />
+<img align="left" src="https://github.com/foxsys-xyz/fsuipc-api/raw/master/public/logoLight.svg" width="64" />
 
 <br/><br/><br/>
 

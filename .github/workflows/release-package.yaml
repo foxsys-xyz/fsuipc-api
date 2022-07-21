@@ -30,8 +30,8 @@ jobs:
       - name: build:prod
         shell: bash
         run: |
-          yarn compile:prod && cd dist
+          yarn compile:prod
       - name: publish:package
-        run: npm publish --access public
+        run: cd dist && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
