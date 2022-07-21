@@ -25,8 +25,8 @@ jobs:
       - name: build:prod
         shell: bash
         run: |
-          yarn compile:prod
-      - name: publish package
-        shell: bash
-        run: |
-          cd dist && npm publish --access public
+          yarn compile:prod && cd dist
+      - name: publish:package
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
