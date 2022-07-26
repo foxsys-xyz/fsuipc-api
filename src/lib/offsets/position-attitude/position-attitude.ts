@@ -20,7 +20,7 @@ export const positionAttitude: OffsetList = {
     category: OffsetCategory.POSITION_ATTITUDE,
     description: '-ve is west, +ve east. mag to true by adding this, true to mag by substracting this',
     type: Type.Int16,
-    convert: '+({VAL}*360/65536).toFixed(2)',
+    convert: '+({VAL} * 360 / 65536).toFixed(2)',
     permission: 'r',
   }),
   gs: new Offset({

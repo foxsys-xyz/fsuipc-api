@@ -24,6 +24,18 @@ export class FsuipcApi {
       } else {
         this.fsuipc = await this.fsuipcGlobalInstance.open();
       }
+
+      return true;
+    } catch (error) {
+      // @ts-ignore
+      throw new FSUIPCError(error.message, error.code);
+    }
+  }
+
+  public async close() {
+    try {
+      this.fsuipc = await this.fsuipcGlobalInstance.close();
+
       return true;
     } catch (error) {
       // @ts-ignore
